@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>LOGIN FORM</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            #loginForm {
+                margin: 15px;
+            }
+
+            label, input {
+                display: block;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+
+    <body>  
+        <center>
+        <div class="container">
+            <h1>Login Form</h1>
+            <form id="loginForm" action="/login" method="POST">
+                <label>Username:</label>
+                <input type="text" name="USERNAME" />
+                <label>Password:</label>
+                <input type="password" name="PASSWORD" />
+                <input type="submit" value="Log in" />
+            </form>
+        </div>
+    </center>
+    </body>
+</html>
