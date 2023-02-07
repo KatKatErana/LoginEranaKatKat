@@ -1,39 +1,43 @@
 <html>
     <head>
         <title>LOGIN FORM</title>
-        <style>
-            body {
-                font-family: sans-serif;
-            }
+        <link rel="stylesheet" href="index.css"/>
+        <script src="index.js"></script>
 
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
+        <script>
+            function ShowPassword()
+            {
+                var l = document.getElementById("mypass");
+                if(l.type == "mypass")
+                {
+                    l.type = "text";
+                }
+                else
+                {
+                    l.type = "mypass";
+                }
             }
-
-            #loginForm {
-                margin: 15px;
-            }
-
-            label, input {
-                display: block;
-                margin-top: 15px;
-            }
-        </style>
+        </script>
     </head>
 
-    <body>  
-        <center>
-        <div class="container">
-            <h1>Login Form</h1>
-            <form id="loginForm" action="/login" method="POST">
-                <label>Username:</label>
-                <input type="text" name="USERNAME" />
-                <label>Password:</label>
-                <input type="password" name="PASSWORD" />
-                <input type="submit" value="Log in" />
+    <body onload="document.form1.input.focus()">            
+        <main id="main-holder">
+            <h1 id="login-header">LOGIN FORM</h1>
+            <div id="login-error-msg-holder">
+              <p id="login-error-msg">Invalid Username <span id="error-msg-second-line">and/or Password</span></p>
+            </div>
+            <form name= form1 id="login-form">
+                <div class="container">
+                    <input type="text" name="input" id="input" class="login-form-field" placeholder="Email" required>
+                    <br>
+                    <br>
+                    <input type="password" id="password" class="login-form-field" placeholder="Password" name="password">  
+                    <input type="checkbox" name="tick" onclick="ShowPassword()">
+                    <br>
+                    <br>
+                    <input type="submit" value="SUBMIT" id="login-form-submit" onclick="ValidateEmail(document.form1.input); ValidatePassword(password)">
+                </div>
             </form>
-        </div>
-    </center>
+          </main> 
     </body>
 </html>
